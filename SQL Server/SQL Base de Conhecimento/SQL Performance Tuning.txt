@@ -1,0 +1,124 @@
+Optimizing a Query for SQL:
+
+ ---------------------------------------------------------------------------------------------------
+ 1. SELECT fields instead of using SELECT *
+ 
+ Inefficient: 
+ Select * from GeeksTable;
+
+ Efficient: 
+ SELECT FirstName, LastName, 
+ Address, City, State, Zip FROM GeeksTable;
+ 
+ ---------------------------------------------------------------------------------------------------
+ 2. Avoid SELECT DISTINCT
+ 
+ Inefficient and inaccurate: 
+ SELECT DISTINCT FirstName, LastName,
+ State FROM GeeksTable;
+
+ Efficient and accurate: 
+ SELECT FirstName, LastName, Address, 
+ City, State, Zip FROM GeeksTable;
+
+ --------------------------------------------------------------------------------------------------- 
+ 3. Create  queries with INNER JOIN (not WHERE or cross join)
+ 
+ Inefficient: 
+ SELECT GFG1.CustomerID, GFG1.Name, GFG1.LastSaleDate
+ FROM GFG1, GFG2
+ WHERE GFG1.CustomerID = GFG2.CustomerID
+ 
+ Efficient:
+ SELECT GFG1.CustomerID, GFG1.Name, GFG1.LastSaleDate
+ FROM GFG1
+ INNER JOIN GFG2
+ ON GFG1.CustomerID = GFG2.CustomerID
+ 
+ ---------------------------------------------------------------------------------------------------
+ 4. Use WHERE instead of HAVING to define filters 
+ 
+ HAVING statements are computed after WHERE statements in accordance with the SQL Order of Operations
+ 
+ Inefficient:
+ SELECT GFG1.CustomerID, GFG1.Name, GFG1.LastSaleDate
+ FROM GFG1
+ INNER JOIN GFG2
+ ON GFG1.CustomerID = GFG2.CustomerID
+ GROUP BY GFG1.CustomerID, GFG1.Name
+ HAVING GFG2.LastSaleDate BETWEEN "1/1/2019" AND "12/31/2019"
+ 
+ Efficient:
+ SELECT GFG1.CustomerID, GFG1.Name, GFG1.LastSaleDate
+ FROM GFG1 INNER JOIN GFG2
+ ON GFG1.CustomerID = GFG2.CustomerID
+ WHERE GFG2.LastSaleDate BETWEEN "1/1/2019" AND "12/31/2019"
+ GROUP BY GFG1.CustomerID, GFG1.Name
+ 
+ ---------------------------------------------------------------------------------------------------
+ 5. Use wildcards at the end of a phrase only
+ 
+ Inefficient: 
+ SELECT City FROM GeekTable WHERE City LIKE ‘%No%’
+ 
+ Efficient:
+ SELECT City FROM GeekTable WHERE City LIKE ‘No%’
+  
+ ---------------------------------------------------------------------------------------------------
+ 6. Use LIMIT to sample query results
+ 
+ Use a LIMIT statement to check if the results will be pleasing and useful before executing a query for the ""first time""
+ SELECT GFG1.CustomerID, GFG1.Name, GFG1.LastSaleDate
+ FROM GFG1
+ INNER JOIN GFG2
+ ON GFG1.CustomerID = GFG2.CustomerID
+ WHERE GFG2.LastSaleDate BETWEEN "1/1/2019" AND "12/31/2019"
+ GROUP BY GFG1.CustomerID, GFG1.Name
+ LIMIT 10 
+  
+ Another alternative is use TOP to limit de result before executing a query for the ""first time""
+ SELECT TOP 10 GFG1.CustomerID, GFG1.Name, GFG1.LastSaleDate
+ FROM GFG1
+ INNER JOIN GFG2
+ ON GFG1.CustomerID = GFG2.CustomerID
+ WHERE GFG2.LastSaleDate BETWEEN "1/1/2019" AND "12/31/2019"
+ GROUP BY GFG1.CustomerID, GFG1.Name 
+  
+ ---------------------------------------------------------------------------------------------------
+ 7. Run your query during off-peak hours
+ 
+ Like "Processamento Noturno" in Daycoval Bank
+ 
+ ---------------------------------------------------------------------------------------------------
+ 8. Index Tuning
+ 
+ Indexes can be used to increase a database’s speed and query performance. Index tuning is the process of improving the index selection.
+ One of the best methods to boost performance in a database application is through effective indexes. Without an index, the SQL Server engine 
+ is similar to a reader who is looking through each page of a book to discover a word
+ 
+ Consequences of Creating Index: 
+ When it comes time to edit records, indexes slow down performance. 
+ The indexes on the data must be updated whenever a query alters the data in a table. 
+ It will be necessary to test and monitor your database to determine the ideal balance before you can create the proper amount of indexes.
+ 
+ Creating The Best Index: 
+ There are a few rules to follow while creating the best indexes for your application. When choosing the indexes 
+ for your tables, take into account the following factors, from the columns user choose to the data values inside them
+ 
+ Short Indexes: 
+ Short indexes are advantageous for two reasons. First, database operations require a lot of disc space by nature. 
+ Larger index keys will require the database to read data from the disc more frequently, reducing throughput. 
+ Second, smaller items are simpler to compare since index entries are frequently used in comparisons
+  
+ Distinct Indexes: 
+ The indexes with the least amount of duplicated values are the most efficient
+ A distinct index is one that has a significant portion of unique values. 
+ A unique index is obviously extremely selective because there are no duplicate entries
+  
+ Clustered Indexes: 
+ Many databases feature a unique special index for each table that contains all of the data from a row. 
+ This index is known as a clustered index by SQL Server. Because each index item has all the information you need and there are no references to follow to pick up extra data values
+  
+ Make sure to select a column with static data when selecting the column(s) for a clustered index.
+ 
+ Primary key columns or foreign key columns frequently have clustered indexes. 
