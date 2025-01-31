@@ -231,27 +231,27 @@ WHERE Shredded.ElemName = 'factorDesc'
 
 DECLARE @dadosxml xml = CONVERT(XML, '<DOC xmlns="http://www.cip-bancos.org.br/MES/RRC0019.xsd">
   <BCMSG>
-    <IdentdEmissor>29011780</IdentdEmissor>
-    <IdentdDestinatario>62232889</IdentdDestinatario>
+    <IdentdEmissor>290180</IdentdEmissor>
+    <IdentdDestinatario>622889</IdentdDestinatario>
     <Grupo_Seq>
       <NumSeq>1</NumSeq>
       <IndrCont>N</IndrCont>
     </Grupo_Seq>
     <DomSist>MES01</DomSist>
-    <NUOp>62232889202108130031782</NUOp>
+    <NUOp>6289108130031782</NUOp>
   </BCMSG>
   <SISMSG>
     <RRC0019R1>
       <CodMsg>RRC0019R1</CodMsg>
       <SitRetReq>002</SitRetReq>
-      <IdentdPartPrincipal>62232889</IdentdPartPrincipal>
-      <IdentdPartAdmtd>62232889</IdentdPartAdmtd>
-      <IdentdNegcRecbvl>15377135</IdentdNegcRecbvl>
+      <IdentdPartPrincipal>622389</IdentdPartPrincipal>
+      <IdentdPartAdmtd>622889</IdentdPartAdmtd>
+      <IdentdNegcRecbvl>153135</IdentdNegcRecbvl>
       <Grupo_RRC0019R1_NegcRecbvlRecsdo CodErro="ERRC0060">
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128000829</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128000829</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01020580191</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>31838000829</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31832800029</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-13</DtPrevtLiquid>
           <VlrTot>23.39</VlrTot>
@@ -260,9 +260,9 @@ DECLARE @dadosxml xml = CONVERT(XML, '<DOC xmlns="http://www.cip-bancos.org.br/M
           <VlrLivreTot>23.39</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001124</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001124</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01027000191</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3183001124</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3183001124</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-13</DtPrevtLiquid>
           <VlrTot>26.84</VlrTot>
@@ -271,9 +271,9 @@ DECLARE @dadosxml xml = CONVERT(XML, '<DOC xmlns="http://www.cip-bancos.org.br/M
           <VlrLivreTot>26.84</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>        
 		<Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01425787000104</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128002872</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128002872</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01257800104</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>31802872</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31302872</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2022-05-17</DtPrevtLiquid>
           <VlrTot>99.16</VlrTot>
@@ -295,12 +295,4 @@ DECLARE @dadosxml xml = CONVERT(XML, '<DOC xmlns="http://www.cip-bancos.org.br/M
 	where x.y.value('local-name(.)', 'VARCHAR(MAX)')='CodErro'
 
 ---------------------------------------------------------------------------------------------
-declare @dadosxml xml
 
-SELECT @dadosxml = CORPO
-FROM AB_RCP.dbo.CORPO_MENSAGENS_RRC WHERE NSU_MENS LIKE '62232889202108130031782R1%'
-
-
-SELECT @dadosxml.value('(//@CodErro)[1]','nvarchar(20)') As CodErro
-
----------------------------------------------------------------------------------------------
