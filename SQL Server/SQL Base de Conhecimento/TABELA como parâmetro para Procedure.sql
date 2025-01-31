@@ -41,17 +41,17 @@ END
 EXEC P_TESTANDO_TP_LISTA_CodCliente @parLISTA_CodCliente
 
 
-USE DCV_GERENCIAL_B
+USE DBContabil
 GO
 
-GRANT EXECUTE ON TYPE::dbo.TP_CLIENTES TO [DAYCOVAL\CSH_APPSGI]
+GRANT EXECUTE ON TYPE::dbo.TP_CLIENTES TO [SEUDOMINIO\CSH_APPSGI]
 GO
 
 --FIM
 
 /*
 **********************************************
-********Exemplo de Chamada DOT.NET ***********
+********Exemplo de Chamada VB.NET ***********
 **********************************************
 
         Public Shared Function Lista(ByVal pDataTable As DataTable) As DataTable
@@ -97,50 +97,3 @@ GO
 
 */
 
-/*
-Outro exemplo
-
- Public Shared Function ListaPosicaoGarantia(ByVal pDataTable As DataTable) As DataTable
-            If pDataTable.Rows.Count <= 0 Then
-                Return Nothing
-            End If
-
-            Dim sqlConnection As SqlConnection = CPool.Pool.GetConnection()
-            Dim dataTable As DataTable
-
-            Try
-                Dim dtCliente As New DataTable
-                dtCliente.Columns.Add("CodCliente")
-
-                For Each row As DataRow In pDataTable.Rows
-                    Dim codCliente As String = row.Item("CodCliente").ToString()
-
-                    If Not String.IsNullOrEmpty(codCliente) Then
-                        dtCliente.Rows.Add(codCliente)
-                    End If
-                Next
-
-                Dim sqlCommand As SqlCommand = New SqlCommand($"..P_GRUPO_ECONOMICO_LISTAR_GARANTIAS", sqlConnection) With
-                {
-                    .CommandTimeout = 0,
-                    .CommandType = CommandType.StoredProcedure
-                }
-
-                sqlCommand.Parameters.AddWithValue("@TB_Clientes", dtCliente)
-
-                dtCliente.Dispose()
-                dataTable = CAcessoDados.ExecuteDataTable(sqlCommand)
-
-            Catch ex As Exception
-                EventLog.WriteEntry("SGI", $"CGrupoEconomico.ListaPosicaoGarantia: {ex.Message}", EventLogEntryType.Error)
-                Throw
-            Finally
-                CPool.Pool.ReleaseConnection(sqlConnection)
-            End Try
-
-            Return dataTable
-
-        End Function
-
-
-*/

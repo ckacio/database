@@ -1,7 +1,5 @@
 DECLARE @xmldata XML
---SELECT @xmldata = CAST(CORPO AS XML) FROM AB_RCP..CORPO_MENSAGENS_RRC WHERE NSU_MENS = '62232889202108130031782R1'
 
---SELECT * FROM AB_RCP..CORPO_MENSAGENS_RRC WHERE NSU_MENS LIKE '62232889202108130031782%'
 
 SELECT @xmldata =
 '<DOC xmlns="http://www.cip-bancos.org.br/MES/RRC0019.xsd">
@@ -13,20 +11,20 @@ SELECT @xmldata =
       <IndrCont>N</IndrCont>
     </Grupo_Seq>
     <DomSist>MES01</DomSist>
-    <NUOp>62232889202108130031782</NUOp>
+    <NUOp>6223289202108031782</NUOp>
   </BCMSG>
   <SISMSG>
     <RRC0019R1>
       <CodMsg>RRC0019R1</CodMsg>
       <SitRetReq>002</SitRetReq>
-      <IdentdPartPrincipal>62232889</IdentdPartPrincipal>
-      <IdentdPartAdmtd>62232889</IdentdPartAdmtd>
-      <IdentdNegcRecbvl>15377135</IdentdNegcRecbvl>
+      <IdentdPartPrincipal>6232889</IdentdPartPrincipal>
+      <IdentdPartAdmtd>62889</IdentdPartAdmtd>
+      <IdentdNegcRecbvl>1515</IdentdNegcRecbvl>
       <Grupo_RRC0019R1_NegcRecbvlRecsdo CodErro="ERRC0060">
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128000829</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128000829</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0100580001</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3183280029</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3181280029</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-13</DtPrevtLiquid>
           <VlrTot>23.39</VlrTot>
@@ -35,9 +33,9 @@ SELECT @xmldata =
           <VlrLivreTot>23.39</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001124</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001124</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01027050011</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3181280024</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>311280011</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-13</DtPrevtLiquid>
           <VlrTot>26.84</VlrTot>
@@ -46,9 +44,9 @@ SELECT @xmldata =
           <VlrLivreTot>26.84</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001124</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001124</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0100580191</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3181280124</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31832800114</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-21</DtPrevtLiquid>
           <VlrTot>595.78</VlrTot>
@@ -57,9 +55,9 @@ SELECT @xmldata =
           <VlrLivreTot>595.78</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001124</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001124</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0270580091</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>31832800124</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3181280024</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-10-11</DtPrevtLiquid>
           <VlrTot>26.83</VlrTot>
@@ -68,9 +66,9 @@ SELECT @xmldata =
           <VlrLivreTot>26.83</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001124</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001124</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0100580001</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3183280014</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3381280014</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-10-21</DtPrevtLiquid>
           <VlrTot>390.08</VlrTot>
@@ -79,9 +77,9 @@ SELECT @xmldata =
           <VlrLivreTot>390.08</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001205</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001205</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0100580001</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3183818205</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31832800125</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-08</DtPrevtLiquid>
           <VlrTot>246.24</VlrTot>
@@ -90,9 +88,9 @@ SELECT @xmldata =
           <VlrLivreTot>246.24</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001205</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001205</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0100580091</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>8381280005</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>8381280005</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-09</DtPrevtLiquid>
           <VlrTot>2751.97</VlrTot>
@@ -101,9 +99,9 @@ SELECT @xmldata =
           <VlrLivreTot>2751.97</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001205</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001205</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01070580001</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>31812800105</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3812801205</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-10</DtPrevtLiquid>
           <VlrTot>523.57</VlrTot>
@@ -112,9 +110,9 @@ SELECT @xmldata =
           <VlrLivreTot>498.15</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001205</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001205</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01705800091</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>38381280125</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31381280015</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-13</DtPrevtLiquid>
           <VlrTot>153.82</VlrTot>
@@ -123,9 +121,9 @@ SELECT @xmldata =
           <VlrLivreTot>8.43</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001205</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001205</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0170580001</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3381281205</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3381280005</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-16</DtPrevtLiquid>
           <VlrTot>141.99</VlrTot>
@@ -134,9 +132,9 @@ SELECT @xmldata =
           <VlrLivreTot>141.99</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01027058000191</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128001205</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128001205</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0170580001</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3181280005</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>3181280005</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2021-09-20</DtPrevtLiquid>
           <VlrTot>241.10</VlrTot>
@@ -145,9 +143,9 @@ SELECT @xmldata =
           <VlrLivreTot>106.39</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01425787000104</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128002872</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128002872</CNPJ_CPFTitular>
+          <CNPJCreddrSub>01257000104</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>31888002872</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31831282872</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2022-03-17</DtPrevtLiquid>
           <VlrTot>225.57</VlrTot>
@@ -156,9 +154,9 @@ SELECT @xmldata =
           <VlrLivreTot>99.16</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01425787000104</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128002872</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128002872</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0147870004</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3181280028</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>31832800872</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2022-04-18</DtPrevtLiquid>
           <VlrTot>99.16</VlrTot>
@@ -167,9 +165,9 @@ SELECT @xmldata =
           <VlrLivreTot>99.16</VlrLivreTot>
         </Grupo_RRC0019R1_UniddRecbvlDisp>
         <Grupo_RRC0019R1_UniddRecbvlDisp>
-          <CNPJCreddrSub>01425787000104</CNPJCreddrSub>
-          <CNPJ_CPFUsuFinalRecbdr>31838128002872</CNPJ_CPFUsuFinalRecbdr>
-          <CNPJ_CPFTitular>31838128002872</CNPJ_CPFTitular>
+          <CNPJCreddrSub>0142870014</CNPJCreddrSub>
+          <CNPJ_CPFUsuFinalRecbdr>3181280272</CNPJ_CPFUsuFinalRecbdr>
+          <CNPJ_CPFTitular>38312800872</CNPJ_CPFTitular>
           <CodInstitdrArrajPgto>003</CodInstitdrArrajPgto>
           <DtPrevtLiquid>2022-05-17</DtPrevtLiquid>
           <VlrTot>99.16</VlrTot>
